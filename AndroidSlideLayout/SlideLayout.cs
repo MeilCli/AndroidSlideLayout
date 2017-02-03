@@ -152,6 +152,7 @@ namespace AndroidSlideLayout {
         protected override void OnDetachedFromWindow() {
             base.OnDetachedFromWindow();
             layoutedChildViewPosition.Clear();
+            childViewPosition.Clear();
         }
 
         public virtual bool TryCaptureView(View child,int pointerId) {
