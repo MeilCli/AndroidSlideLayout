@@ -5,7 +5,7 @@ SlideLayout' children view can drag!!
 
 Allow Directions All, Vertical, Horizontal, Top, Bottom, Left, Right.  
 ![](/all_vertical_horizontal.gif)
-![](/top_bottom_left_right_gif)
+![](/top_bottom_left_right.gif)
 
 ## Usage
 How use in your Project? see [AndroidSlideLayout.App](/AndroidSlideLayout.App)!!!
