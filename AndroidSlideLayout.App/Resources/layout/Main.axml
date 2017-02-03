@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidslidelayout.SlideLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="draggable"
+            android:background="@android:color/holo_blue_bright"
+            app:draggable_all_direction="true" />
+    </androidslidelayout.SlideLayout>
+    <androidslidelayout.SlideLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="draggable vertical"
+            android:background="@android:color/holo_blue_dark"
+            app:draggable_vertical_direction="true" />
+    </androidslidelayout.SlideLayout>
+    <androidslidelayout.SlideLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="draggable horizontal"
+            android:background="@android:color/holo_blue_bright"
+            app:draggable_horizontal_direction="true" />
+    </androidslidelayout.SlideLayout>
+    <androidslidelayout.SlideLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="draggable top"
+            android:background="@android:color/holo_blue_dark"
+            app:draggable_top_direction="true" />
+    </androidslidelayout.SlideLayout>
+    <androidslidelayout.SlideLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="draggable bottom"
+            android:background="@android:color/holo_blue_bright"
+            app:draggable_bottom_direction="true" />
+    </androidslidelayout.SlideLayout>
+    <androidslidelayout.SlideLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="draggable left"
+            android:background="@android:color/holo_blue_dark"
+            app:draggable_left_direction="true" />
+    </androidslidelayout.SlideLayout>
+    <androidslidelayout.SlideLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="draggable right"
+            android:background="@android:color/holo_blue_bright"
+            app:draggable_right_direction="true" />
+    </androidslidelayout.SlideLayout>
+    <ImageView
+        android:id="@+id/Transition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon"
+        android:scaleType="centerCrop" />
+</LinearLayout>
