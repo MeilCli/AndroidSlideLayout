@@ -1,4 +1,5 @@
 # AndroidSlideLayout
+[![NuGet version](https://badge.fury.io/nu/Meilcli.Android.SlideLayout.svg)](https://www.nuget.org/packages/Meilcli.Android.SlideLayout/)  
 SlideLayout for Xamarin.Android
 
 SlideLayout' children view can drag!!
