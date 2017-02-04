@@ -7,6 +7,14 @@ Allow Directions All, Vertical, Horizontal, Top, Bottom, Left, Right.
 ![](/all_vertical_horizontal.gif)
 ![](/top_bottom_left_right.gif)
 
+## Required
+- MonoAndroid7.0 (if older version? should update Xamarin.Android)
+
+## Install
+~~~
+Install-Package Meilcli.Android.SlideLayout
+~~~
+
 ## Usage
 How use in your Project? see [AndroidSlideLayout.App](/AndroidSlideLayout.App)!!!
 ### Activity Transition and Back Motion

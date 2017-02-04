@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{60F92E71-04AF-4444-B7BE-EDABC6E7457F}"
 	ProjectSection(SolutionItems) = preProject
 		all_vertical_horizontal.gif = all_vertical_horizontal.gif
+		AndroidSlideLayout.nuspec = AndroidSlideLayout.nuspec
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
 		top_bottom_left_right.gif = top_bottom_left_right.gif

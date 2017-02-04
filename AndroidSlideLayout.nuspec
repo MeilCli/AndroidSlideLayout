@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata minClientVersion="2.8.3">
+		<id>Meilcli.Android.SlideLayout</id>
+		<version>1.0.0</version>
+		<title>SlideLayout for Xamarin.Android</title>
+		<authors>meilcli</authors>
+		<owners>meilcli</owners>
+		<licenseUrl>https://github.com/MeilCli/AndroidSlideLayout/blob/master/LICENSE.txt</licenseUrl>
+		<projectUrl>https://github.com/MeilCli/AndroidSlideLayout</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>
+SlideLayout for Xamarin.Android
+SlideLayout' children view can drag!!
+		</description>
+		<summary>SlideLayout Library</summary>
+		<tags>xamarin, android, slide, drag, slidelayout</tags>
+		<dependencies>
+			<group targetFramework="MonoAndroid70">
+				<dependency id="Xamarin.Android.Support.Compat" version="24.2.1" />
+				<dependency id="Xamarin.Android.Support.Core.UI" version="24.2.1" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="AndroidSlideLayout\bin\Release\AndroidSlideLayout.dll" target="lib\MonoAndroid70" />
+		<file src="AndroidSlideLayout\bin\Release\AndroidSlideLayout.xml" target="lib\MonoAndroid70" />
+		<file src="AndroidSlideLayout\bin\Release\AndroidSlideLayout.pdb" target="lib\MonoAndroid70" />
+	</files>
+</package>
