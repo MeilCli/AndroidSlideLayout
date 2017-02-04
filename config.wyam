@@ -9,5 +9,6 @@ FileSystem.OutputPath = "docs";
 Settings[DocsKeys.Title] = "AndroidSlideLayout";
 Settings[DocsKeys.SourceFiles] = "../../AndroidSlideLayout/AndroidSlideLayout/**/*.cs";
 Settings[DocsKeys.BaseEditUrl] = "https://github.com/MeilCli/AndroidSlideLayout/tree/master/AndroidSlideLayout.Docs/input/";
+Settings[DocsKeys.Logo] = "logo.png";
 
 System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
