@@ -16,6 +16,9 @@ Allow Directions All, Vertical, Horizontal, Top, Bottom, Left, Right.
 Install-Package Meilcli.Android.SlideLayout
 ~~~
 
+## API Document
+[API Document](https://meilcli.github.io/AndroidSlideLayout/)
+
 ## Usage
 How use in your Project? see [sample AndroidSlideLayout.App](/AndroidSlideLayout.App)!!!
 
