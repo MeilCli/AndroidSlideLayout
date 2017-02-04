@@ -360,22 +360,22 @@ namespace AndroidSlideLayout {
             /// <summary>
             /// If set true, draggable top direction
             /// </summary>
-            public bool IsDraggableTopDirection { get; private set; }
+            public bool IsDraggableTopDirection { get; set; }
 
             /// <summary>
             /// If set true, draggable bottom direction
             /// </summary>
-            public bool IsDraggableBottomDirection { get; private set; }
+            public bool IsDraggableBottomDirection { get; set; }
 
             /// <summary>
             /// If set true, draggable left direction
             /// </summary>
-            public bool IsDraggableLeftDirection { get; private set; }
+            public bool IsDraggableLeftDirection { get; set; }
 
             /// <summary>
             /// If set true, draggable right direction
             /// </summary>
-            public bool IsDraggableRightDirection { get; private set; }
+            public bool IsDraggableRightDirection { get; set; }
 
             public LayoutParams() : base(MatchParent,MatchParent) { }
 
