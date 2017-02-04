@@ -39,7 +39,7 @@ Second, add SlideLayout and child view in xml
 </androidslidelayout.SlideLayout>
 ```
 
-### How cusomize directions?
+### How customize directions?
 Set draggable_*_direction in SlideLayout's child view
 ```
 app:draggable_all_direction="true"
