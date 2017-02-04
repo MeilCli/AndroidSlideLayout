@@ -1,0 +1,748 @@
+<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/AndroidSlideLayout/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/AndroidSlideLayout/assets/img/favicon.ico" type="image/x-icon">
+        <title>AndroidSlideLayout - API - SlideLayout Class</title>
+        <link href="/AndroidSlideLayout/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/AndroidSlideLayout/assets/css/highlight.css" rel="stylesheet">
+        <link href="/AndroidSlideLayout/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/AndroidSlideLayout/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/AndroidSlideLayout/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/AndroidSlideLayout/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/AndroidSlideLayout/assets/css/override.css" rel="stylesheet">
+        <script src="/AndroidSlideLayout/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/AndroidSlideLayout/assets/js/bootstrap.min.js"></script>        
+        <script src="/AndroidSlideLayout/assets/js/app.min.js"></script>         
+        <script src="/AndroidSlideLayout/assets/js/highlight.pack.js"></script>   
+        <script src="/AndroidSlideLayout/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/AndroidSlideLayout/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/AndroidSlideLayout/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/AndroidSlideLayout/assets/js/html5shiv.min.js"></script>
+        <script src="/AndroidSlideLayout/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/AndroidSlideLayout/" class="logo">
+                            <span>AndroidSlideLayout</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/AndroidSlideLayout/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Constructors">Constructors</a></p>
+<p><a href="#Events">Events</a></p>
+<p><a href="#fields">Fields</a></p>
+<p><a href="#Properties">Properties</a></p>
+<p><a href="#Methods">Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Namespace</li>
+		<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout">AndroidSlideLayout</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></li>
+				<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout/Resource">Resource</a></li>
+				<li class="selected"><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout">SlideLayout</a></li>
+				<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout/ViewCapturedEventArgs">View<wbr>Captured<wbr>Event<wbr>Args</a></li>
+				<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout/ViewDragHelperCallback">View<wbr>Drag<wbr>Helper<wbr>Callback</a></li>
+				<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout/ViewDragStateChangedEventArgs">View<wbr>Drag<wbr>State<wbr>Changed<wbr>Event<wbr>Args</a></li>
+				<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout/ViewPositionChangedEventArgs">View<wbr>Position<wbr>Changed<wbr>Event<wbr>Args</a></li>
+				<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout/ViewReleasedEventArgs">View<wbr>Released<wbr>Event<wbr>Args</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout/IDragCallback">IDragCallback</a></li>
+
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>SlideLayout <small>Class</small></h1>
+</section>
+<section class="content">
+	
+	
+	
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+
+								<dt>Namespace</dt>
+								<dd><a href="/AndroidSlideLayout/api/AndroidSlideLayout">AndroidSlideLayout</a></dd>
+											
+								<dt>Interfaces</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout/IDragCallback">IDragCallback</a></li>								
+									</ul>
+								</dd>
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>ViewGroup</li>								
+											<li><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></li>								
+									</ul>
+								</dd>				
+							
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph TD
+	Base0["FrameLayoutCompat"]--&gt;Type
+	click Base0 "/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat"
+	Base1["ViewGroup"]--&gt;Base0
+	Interface0["IDragCallback"]-.-&gt;Type
+	click Interface0 "/AndroidSlideLayout/api/AndroidSlideLayout/IDragCallback"
+	Type["SlideLayout"]
+class Type type-node
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public class SlideLayout : FrameLayoutCompat, IDragCallback</code></pre>
+
+
+
+
+
+
+			<h1 id="Constructors">Constructors</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/08BA32D4.html">SlideLayout<wbr>(Context)<wbr></a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/409F389C.html">SlideLayout<wbr>(Context, <wbr>IAttributeSet)<wbr></a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/0A969155.html">SlideLayout<wbr>(Context, <wbr>IAttributeSet, <wbr>int)<wbr></a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/AE631B09.html">SlideLayout<wbr>(IntPtr, <wbr>JniHandleOwnership)<wbr></a></td>
+									<td></td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Events">Events</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/407D483B.html">ViewCaptured</a></td>
+								<td>EventHandler<wbr>&lt;<wbr>View<wbr>Captured<wbr>Event<wbr>Args&gt;<wbr></td>
+								<td>
+									<div>
+    Event of a child view is captured for dragging or settling.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/2394D77D.html">ViewDragStateChanged</a></td>
+								<td>EventHandler<wbr>&lt;<wbr>View<wbr>Drag<wbr>State<wbr>Changed<wbr>Event<wbr>Args&gt;<wbr></td>
+								<td>
+									<div>
+    Event of the drag state changed.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/CB10877B.html">ViewPositionChanged</a></td>
+								<td>EventHandler<wbr>&lt;<wbr>View<wbr>Position<wbr>Changed<wbr>Event<wbr>Args&gt;<wbr></td>
+								<td>
+									<div>
+    Event of the captured view position changed.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/CBBE3B88.html">ViewReleased</a></td>
+								<td>EventHandler<wbr>&lt;<wbr>View<wbr>Released<wbr>Event<wbr>Args&gt;<wbr></td>
+								<td>
+									<div>
+    Event of the captured view is no longer being actively dragged.
+    </div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="fields">Fields</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Constant Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/154EF429.html">StateDragging</a></td>
+								<td></td>
+								<td>
+									<div>
+    A view is currently being dragged.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/80303512.html">StateIdle</a></td>
+								<td></td>
+								<td>
+									<div>
+    A view is not currently being dragged or animating as a result of a fling/snap.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/B18EE848.html">StateSetting</a></td>
+								<td></td>
+								<td>
+									<div>
+    A view is currently settling into place as a result of a fling or predefined non-interactive motion.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Properties">Properties</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/B5E596DD.html">Current<wbr>Drag<wbr>Child<wbr>View<wbr>Dragged<wbr>Left</a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Current drag captured view's left position in drag motion
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/2EA3FD88.html">Current<wbr>Drag<wbr>Child<wbr>View<wbr>Dragged<wbr>Top</a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Current drag captured view's top position in drag motion
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/0C0457E2.html">Current<wbr>Drag<wbr>Child<wbr>View<wbr>Layouted<wbr>Left</a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Current drag captured view's layouted left position
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/88C71AFC.html">Current<wbr>Drag<wbr>Child<wbr>View<wbr>Layouted<wbr>Top</a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Current drag captured view's layouted top position
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/993CB761.html">Current<wbr>Drag<wbr>Child<wbr>View<wbr>Left</a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Current drag captured view's left position
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/9F95A7CF.html">Current<wbr>Drag<wbr>Child<wbr>View<wbr>Top</a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Current drag captured view's top position
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/8DE8391D.html">Foreground</a></td>
+								<td>Drawable</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/3C996C37.html">MeasureAllChildren</a></td>
+								<td>bool</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/7E8F2885.html">Apply<wbr>Drawable<wbr>To<wbr>Transparent<wbr>Region<wbr>(Drawable, <wbr>Region)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/1F0772A0.html">CheckLayoutParams<wbr>(ViewGroup<wbr>.LayoutParams)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/A215CAA0.html">Clamp<wbr>View<wbr>Position<wbr>Horizontal<wbr>(View, <wbr>int, <wbr>int)<wbr></a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Decide next cordination x position in drag event.
+    The default implementation provide <code class="cs"><a href="/AndroidSlideLayout/api/AndroidSlideLayout/LayoutParams">SlideLayout.LayoutParams</a></code>'s draggable direction motion.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/1F543E6D.html">Clamp<wbr>View<wbr>Position<wbr>Vertical<wbr>(View, <wbr>int, <wbr>int)<wbr></a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Decide next cordination y position in drag event.
+    The default implementation provide <code class="cs"><a href="/AndroidSlideLayout/api/AndroidSlideLayout/LayoutParams">SlideLayout.LayoutParams</a></code>'s draggable direction motion.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/103C94DA.html">ComputeScroll<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/38C11706.html">Draw<wbr>(Canvas)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/E550A7CC.html">DrawableStateChanged<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/B5AD3882.html">Gather<wbr>Transparent<wbr>Region<wbr>(Region)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/908AB8D8.html">Generate<wbr>Default<wbr>Layout<wbr>Params<wbr>()<wbr></a></td>
+								<td>ViewGroup<wbr>.LayoutParams</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/2AC84A32.html">GenerateLayoutParams<wbr>(IAttributeSet)<wbr></a></td>
+								<td>ViewGroup<wbr>.LayoutParams</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/AB8B2B3E.html">GenerateLayoutParams<wbr>(ViewGroup<wbr>.LayoutParams)<wbr></a></td>
+								<td>ViewGroup<wbr>.LayoutParams</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/22CAB559.html">Get<wbr>View<wbr>Horizontal<wbr>Drag<wbr>Range<wbr>(View)<wbr></a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Decide horizontal draggable range.
+    If overriding method, shoul use result of base method.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/E01FE6DC.html">Get<wbr>View<wbr>Vertical<wbr>Drag<wbr>Range<wbr>(View)<wbr></a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Decide vertical draggable range.
+    If overriding method, shoul use result of base method.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/FC6167BC.html">Jump<wbr>Drawables<wbr>To<wbr>Current<wbr>State<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/C474AA95.html">OnAttachedToWindow<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/A4F0A440.html">OnDetachedFromWindow<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/44C6B172.html">On<wbr>Intercept<wbr>Touch<wbr>Event<wbr>(MotionEvent)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/D897FBC1.html">OnLayout<wbr>(bool, <wbr>int, <wbr>int, <wbr>int, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/BBBD98F2.html">OnMeasure<wbr>(int, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/F44F8314.html">OnSizeChanged<wbr>(int, <wbr>int, <wbr>int, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/D6189306.html">OnTouchEvent<wbr>(MotionEvent)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/52E71A5A.html">OnViewCaptured<wbr>(View, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Called when a child view is captured for dragging or settling.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/CA8E0A8F.html">On<wbr>View<wbr>Drag<wbr>State<wbr>Changed<wbr>(int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Called when the drag state changes. See the <code class="cs"><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/80303512.html">StateIdle</a></code>, <code class="cs"><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/154EF429.html">StateDragging</a></code> and <code class="cs"><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/B18EE848.html">StateSetting</a></code> for more information.
+    If override method, should call base method.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/96C318F8.html">On<wbr>View<wbr>Position<wbr>Changed<wbr>(View, <wbr>int, <wbr>int, <wbr>int, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Called when the captured view's position changes in drag event.
+    If override method, should call base method.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/3B4D3254.html">OnViewReleased<wbr>(View, <wbr>float, <wbr>float)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Called when captured view is no longer being actively dragged.
+    If overriding method, you think use <code class="cs"><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/CBBE3B88.html">ViewReleased</a></code> event.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/882D2632.html">SetForegroundGravity<wbr>(GravityFlags)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/ACB28AA8.html">Should<wbr>Delay<wbr>Child<wbr>Pressed<wbr>State<wbr>()<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/188B17B6.html">SmoothSlideViewTo<wbr>(View, <wbr>int, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Start smooth slid view animation and set view position.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout/213DED5D.html">TryCaptureView<wbr>(View, <wbr>int)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat/6ABE4CB1.html">VerifyDrawable<wbr>(Drawable)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat">FrameLayoutCompat</a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                This Library is <a href="https://github.com/MeilCli/AndroidSlideLayout">Open Source</a> and under <a href="https://github.com/MeilCli/AndroidSlideLayout/blob/master/LICENSE.txt">MIT License</a><br>
+Generated by <a href="https://wyam.io">Wyam</a> and Hosted by <a href="https://github.com/">Github</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

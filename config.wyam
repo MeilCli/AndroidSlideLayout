@@ -1,0 +1,13 @@
+Settings[Keys.Host] = "meilcli.github.io";
+Settings[Keys.LinkRoot] = "AndroidSlideLayout";
+Settings[Keys.LinksUseHttps] = true;
+Settings[Keys.LinkHideExtensions] = false;
+
+FileSystem.InputPaths.Add("AndroidSlideLayout.Docs/input");
+FileSystem.OutputPath = "docs";
+
+Settings[DocsKeys.Title] = "AndroidSlideLayout";
+Settings[DocsKeys.SourceFiles] = "../../AndroidSlideLayout/AndroidSlideLayout/**/*.cs";
+Settings[DocsKeys.BaseEditUrl] = "https://github.com/MeilCli/AndroidSlideLayout/tree/master/AndroidSlideLayout.Docs/input/";
+
+System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
