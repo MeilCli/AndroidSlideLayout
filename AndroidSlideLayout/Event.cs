@@ -1,14 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 
 namespace AndroidSlideLayout {
 
@@ -27,7 +18,7 @@ namespace AndroidSlideLayout {
         /// </summary>
         public int ActivePointerId { get; }
 
-        public ViewCapturedEventArgs(View capturedChild,int activePointerId) {
+        public ViewCapturedEventArgs(View capturedChild, int activePointerId) {
             CapturedChild = capturedChild;
             ActivePointerId = activePointerId;
         }
@@ -63,7 +54,7 @@ namespace AndroidSlideLayout {
         /// </summary>
         public int Dy { get; }
 
-        public ViewPositionChangedEventArgs(View changedView,int left,int top,int dx,int dy) {
+        public ViewPositionChangedEventArgs(View changedView, int left, int top, int dx, int dy) {
             ChangedView = changedView;
             Left = left;
             Top = top;
@@ -99,7 +90,7 @@ namespace AndroidSlideLayout {
         /// </summary>
         public bool Handled { get; set; } = false;
 
-        public ViewReleasedEventArgs(View releasedChild,float xvel,float yvel) {
+        public ViewReleasedEventArgs(View releasedChild, float xvel, float yvel) {
             ReleasedChild = releasedChild;
             XVelocity = xvel;
             YVelocity = yvel;

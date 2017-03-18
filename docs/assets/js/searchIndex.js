@@ -34,22 +34,6 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"ViewPositionChangedEventArgs",
-        content:"ViewPositionChangedEventArgs",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:1,
-        title:"ViewReleasedEventArgs",
-        content:"ViewReleasedEventArgs",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:2,
         title:"ViewCapturedEventArgs",
         content:"ViewCapturedEventArgs",
         description:'',
@@ -57,15 +41,7 @@ var searchModule = function() {
     });
 
     a({
-        id:3,
-        title:"SlideLayout",
-        content:"SlideLayout",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:4,
+        id:1,
         title:"IDragCallback",
         content:"IDragCallback",
         description:'',
@@ -73,7 +49,7 @@ var searchModule = function() {
     });
 
     a({
-        id:5,
+        id:2,
         title:"Resource Styleable",
         content:"Resource Styleable",
         description:'',
@@ -81,23 +57,23 @@ var searchModule = function() {
     });
 
     a({
-        id:6,
-        title:"Resource String",
-        content:"Resource String",
+        id:3,
+        title:"FrameLayoutCompat",
+        content:"FrameLayoutCompat",
         description:'',
         tags:''
     });
 
     a({
-        id:7,
-        title:"Resource",
-        content:"Resource",
+        id:4,
+        title:"ViewPositionChangedEventArgs",
+        content:"ViewPositionChangedEventArgs",
         description:'',
         tags:''
     });
 
     a({
-        id:8,
+        id:5,
         title:"Resource Attribute",
         content:"Resource Attribute",
         description:'',
@@ -105,23 +81,15 @@ var searchModule = function() {
     });
 
     a({
-        id:9,
-        title:"ViewDragHelperCallback",
-        content:"ViewDragHelperCallback",
+        id:6,
+        title:"ViewReleasedEventArgs",
+        content:"ViewReleasedEventArgs",
         description:'',
         tags:''
     });
 
     a({
-        id:10,
-        title:"FrameLayoutCompat LayoutParams",
-        content:"FrameLayoutCompat LayoutParams",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:11,
+        id:7,
         title:"SlideLayout LayoutParams",
         content:"SlideLayout LayoutParams",
         description:'',
@@ -129,7 +97,15 @@ var searchModule = function() {
     });
 
     a({
-        id:12,
+        id:8,
+        title:"Resource",
+        content:"Resource",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:9,
         title:"ViewDragStateChangedEventArgs",
         content:"ViewDragStateChangedEventArgs",
         description:'',
@@ -137,34 +113,40 @@ var searchModule = function() {
     });
 
     a({
+        id:10,
+        title:"Resource String",
+        content:"Resource String",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:11,
+        title:"ViewDragHelperCallback",
+        content:"ViewDragHelperCallback",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:12,
+        title:"FrameLayoutCompat LayoutParams",
+        content:"FrameLayoutCompat LayoutParams",
+        description:'',
+        tags:''
+    });
+
+    a({
         id:13,
-        title:"FrameLayoutCompat",
-        content:"FrameLayoutCompat",
+        title:"SlideLayout",
+        content:"SlideLayout",
         description:'',
         tags:''
     });
 
     y({
-        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/ViewPositionChangedEventArgs',
-        title:"ViewPositionChangedEventArgs",
-        description:""
-    });
-
-    y({
-        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/ViewReleasedEventArgs',
-        title:"ViewReleasedEventArgs",
-        description:""
-    });
-
-    y({
         url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/ViewCapturedEventArgs',
         title:"ViewCapturedEventArgs",
-        description:""
-    });
-
-    y({
-        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout',
-        title:"SlideLayout",
         description:""
     });
 
@@ -181,8 +163,32 @@ var searchModule = function() {
     });
 
     y({
-        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/String',
-        title:"Resource.String",
+        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat',
+        title:"FrameLayoutCompat",
+        description:""
+    });
+
+    y({
+        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/ViewPositionChangedEventArgs',
+        title:"ViewPositionChangedEventArgs",
+        description:""
+    });
+
+    y({
+        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/Attribute',
+        title:"Resource.Attribute",
+        description:""
+    });
+
+    y({
+        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/ViewReleasedEventArgs',
+        title:"ViewReleasedEventArgs",
+        description:""
+    });
+
+    y({
+        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/LayoutParams',
+        title:"SlideLayout.LayoutParams",
         description:""
     });
 
@@ -193,8 +199,14 @@ var searchModule = function() {
     });
 
     y({
-        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/Attribute',
-        title:"Resource.Attribute",
+        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/ViewDragStateChangedEventArgs',
+        title:"ViewDragStateChangedEventArgs",
+        description:""
+    });
+
+    y({
+        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/String',
+        title:"Resource.String",
         description:""
     });
 
@@ -211,20 +223,8 @@ var searchModule = function() {
     });
 
     y({
-        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/LayoutParams',
-        title:"SlideLayout.LayoutParams",
-        description:""
-    });
-
-    y({
-        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/ViewDragStateChangedEventArgs',
-        title:"ViewDragStateChangedEventArgs",
-        description:""
-    });
-
-    y({
-        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/FrameLayoutCompat',
-        title:"FrameLayoutCompat",
+        url:'/AndroidSlideLayout/AndroidSlideLayout/api/AndroidSlideLayout/SlideLayout',
+        title:"SlideLayout",
         description:""
     });
 

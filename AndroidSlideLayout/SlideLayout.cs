@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
-using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Widget;
 using Android.Util;
@@ -62,8 +57,8 @@ namespace AndroidSlideLayout {
         public event EventHandler<ViewDragStateChangedEventArgs> ViewDragStateChanged;
 
         private ViewDragHelper viewDragHelper;
-        private Dictionary<View,Point> layoutedChildViewPosition = new Dictionary<View,Point>();
-        private Dictionary<View,Point> childViewPosition = new Dictionary<View,Point>();
+        private Dictionary<View, Point> layoutedChildViewPosition = new Dictionary<View, Point>();
+        private Dictionary<View, Point> childViewPosition = new Dictionary<View, Point>();
 
 
         /// <summary>
@@ -96,21 +91,21 @@ namespace AndroidSlideLayout {
         /// </summary>
         public int CurrentDragChildViewDraggedLeft { get; private set; }
 
-        public SlideLayout(Context context) : this(context,null) { }
+        public SlideLayout(Context context) : this(context, null) { }
 
-        public SlideLayout(Context context,IAttributeSet attr) : this(context,attr,0) { }
+        public SlideLayout(Context context, IAttributeSet attr) : this(context, attr, 0) { }
 
-        public SlideLayout(Context context,IAttributeSet attr,int defStyle) : base(context,attr,defStyle) {
+        public SlideLayout(Context context, IAttributeSet attr, int defStyle) : base(context, attr, defStyle) {
             setUpViewDragHelper();
         }
 
-        public SlideLayout(IntPtr javaReference,JniHandleOwnership transfer) : base(javaReference,transfer) { }
+        public SlideLayout(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) { }
 
         private void setUpViewDragHelper() {
-            if(viewDragHelper != null) {
+            if (viewDragHelper != null) {
                 return;
             }
-            viewDragHelper = ViewDragHelper.Create(this,sensitivity,new ViewDragHelperCallback(this));
+            viewDragHelper = ViewDragHelper.Create(this, sensitivity, new ViewDragHelperCallback(this));
         }
 
         protected override void OnAttachedToWindow() {
@@ -119,7 +114,7 @@ namespace AndroidSlideLayout {
         }
 
         public override bool OnInterceptTouchEvent(MotionEvent ev) {
-            switch(ev.Action) {
+            switch (ev.Action) {
                 case MotionEventActions.Cancel:
                 case MotionEventActions.Up:
                     viewDragHelper.Cancel();
@@ -135,17 +130,17 @@ namespace AndroidSlideLayout {
 
         public override void ComputeScroll() {
             base.ComputeScroll();
-            if(viewDragHelper.ContinueSettling(true)) {
+            if (viewDragHelper.ContinueSettling(true)) {
                 Invalidate();
             }
         }
 
-        protected override void OnLayout(bool changed,int left,int top,int right,int bottom) {
-            base.OnLayout(changed,left,top,right,bottom);
+        protected override void OnLayout(bool changed, int left, int top, int right, int bottom) {
+            base.OnLayout(changed, left, top, right, bottom);
             layoutedChildViewPosition.Clear();
-            for(int i = 0;i < ChildCount;i++) {
+            for (int i = 0; i < ChildCount; i++) {
                 var child = GetChildAt(i);
-                layoutedChildViewPosition.Add(child,new Point(child.Left,child.Top));
+                layoutedChildViewPosition.Add(child, new Point(child.Left, child.Top));
             }
         }
 
@@ -155,9 +150,9 @@ namespace AndroidSlideLayout {
             childViewPosition.Clear();
         }
 
-        public virtual bool TryCaptureView(View child,int pointerId) {
+        public virtual bool TryCaptureView(View child, int pointerId) {
             var parameters = child.LayoutParameters as LayoutParams;
-            if(parameters == null) {
+            if (parameters == null) {
                 return false;
             }
             return parameters.IsDraggableTopDirection || parameters.IsDraggableBottomDirection || parameters.IsDraggableLeftDirection || parameters.IsDraggableRightDirection;
@@ -168,17 +163,17 @@ namespace AndroidSlideLayout {
         /// </summary>
         /// <param name="capturedChild">Child view that was captured</param>
         /// <param name="activePointerId">Pointer id tracking the child capture</param>
-        public virtual void OnViewCaptured(View capturedChild,int activePointerId) {
+        public virtual void OnViewCaptured(View capturedChild, int activePointerId) {
             CurrentDragChildViewLayoutedLeft = layoutedChildViewPosition[capturedChild].X;
             CurrentDragChildViewLayoutedTop = layoutedChildViewPosition[capturedChild].Y;
-            if(childViewPosition.ContainsKey(capturedChild)) {
+            if (childViewPosition.ContainsKey(capturedChild)) {
                 CurrentDragChildViewLeft = childViewPosition[capturedChild].X;
                 CurrentDragChildViewTop = childViewPosition[capturedChild].Y;
             } else {
                 CurrentDragChildViewLeft = CurrentDragChildViewLayoutedLeft;
                 CurrentDragChildViewTop = CurrentDragChildViewLayoutedTop;
             }
-            ViewCaptured?.Invoke(this,new ViewCapturedEventArgs(capturedChild,activePointerId));
+            ViewCaptured?.Invoke(this, new ViewCapturedEventArgs(capturedChild, activePointerId));
         }
 
         /// <summary>
@@ -189,24 +184,24 @@ namespace AndroidSlideLayout {
         /// <param name="top">New y coordinate of the top edge of the view</param>
         /// <param name="dy">Change in y position from the last call</param>
         /// <returns></returns>
-        public virtual int ClampViewPositionVertical(View child,int top,int dy) {
+        public virtual int ClampViewPositionVertical(View child, int top, int dy) {
             var parameter = child.LayoutParameters as LayoutParams;
-            if(top < CurrentDragChildViewLayoutedTop || (top == CurrentDragChildViewLayoutedTop && dy < 0)) {
+            if (top < CurrentDragChildViewLayoutedTop || (top == CurrentDragChildViewLayoutedTop && dy < 0)) {
                 // 上方向
-                if(parameter.IsDraggableTopDirection == false) {
+                if (parameter.IsDraggableTopDirection == false) {
                     return CurrentDragChildViewLayoutedTop;
                 }
-                if(top > CurrentDragChildViewLayoutedTop && parameter.IsDraggableBottomDirection == false) {
+                if (top > CurrentDragChildViewLayoutedTop && parameter.IsDraggableBottomDirection == false) {
                     return CurrentDragChildViewLayoutedTop;
                 }
                 return top;
             }
-            if(top > CurrentDragChildViewLayoutedTop || (top == CurrentDragChildViewLayoutedTop && dy > 0)) {
+            if (top > CurrentDragChildViewLayoutedTop || (top == CurrentDragChildViewLayoutedTop && dy > 0)) {
                 // 下方向
-                if(parameter.IsDraggableBottomDirection == false) {
+                if (parameter.IsDraggableBottomDirection == false) {
                     return CurrentDragChildViewLayoutedTop;
                 }
-                if(top < CurrentDragChildViewLayoutedTop && parameter.IsDraggableTopDirection == false) {
+                if (top < CurrentDragChildViewLayoutedTop && parameter.IsDraggableTopDirection == false) {
                     return CurrentDragChildViewLayoutedTop;
                 }
                 return top;
@@ -222,24 +217,24 @@ namespace AndroidSlideLayout {
         /// <param name="left">New x coordinate of the left edge of the view</param>
         /// <param name="dx">Change in x position from the last call</param>
         /// <returns>The new cordination y position</returns>
-        public virtual int ClampViewPositionHorizontal(View child,int left,int dx) {
+        public virtual int ClampViewPositionHorizontal(View child, int left, int dx) {
             var parameter = child.LayoutParameters as LayoutParams;
-            if(left < CurrentDragChildViewLayoutedLeft || (left == CurrentDragChildViewLayoutedLeft && dx < 0)) {
+            if (left < CurrentDragChildViewLayoutedLeft || (left == CurrentDragChildViewLayoutedLeft && dx < 0)) {
                 // 左方向
-                if(parameter.IsDraggableLeftDirection == false) {
+                if (parameter.IsDraggableLeftDirection == false) {
                     return CurrentDragChildViewLayoutedLeft;
                 }
-                if(left > CurrentDragChildViewLayoutedLeft && parameter.IsDraggableRightDirection == false) {
+                if (left > CurrentDragChildViewLayoutedLeft && parameter.IsDraggableRightDirection == false) {
                     return CurrentDragChildViewLayoutedLeft;
                 }
                 return left;
             }
-            if(left > CurrentDragChildViewLayoutedLeft || (left == CurrentDragChildViewLayoutedLeft && dx > 0)) {
+            if (left > CurrentDragChildViewLayoutedLeft || (left == CurrentDragChildViewLayoutedLeft && dx > 0)) {
                 // 右方向
-                if(parameter.IsDraggableRightDirection == false) {
+                if (parameter.IsDraggableRightDirection == false) {
                     return CurrentDragChildViewLayoutedLeft;
                 }
-                if(left < CurrentDragChildViewLayoutedLeft && parameter.IsDraggableLeftDirection == false) {
+                if (left < CurrentDragChildViewLayoutedLeft && parameter.IsDraggableLeftDirection == false) {
                     return CurrentDragChildViewLayoutedLeft;
                 }
                 return left;
@@ -255,7 +250,7 @@ namespace AndroidSlideLayout {
         /// <returns>The draggable range</returns>
         public virtual int GetViewVerticalDragRange(View child) {
             var parameter = child.LayoutParameters as LayoutParams;
-            if(parameter.IsDraggableTopDirection == false && parameter.IsDraggableBottomDirection == false) {
+            if (parameter.IsDraggableTopDirection == false && parameter.IsDraggableBottomDirection == false) {
                 return 0;
             }
             return Height;
@@ -269,7 +264,7 @@ namespace AndroidSlideLayout {
         /// <returns>The draggable range</returns>
         public virtual int GetViewHorizontalDragRange(View child) {
             var parameter = child.LayoutParameters as LayoutParams;
-            if(parameter.IsDraggableLeftDirection == false && parameter.IsDraggableRightDirection == false) {
+            if (parameter.IsDraggableLeftDirection == false && parameter.IsDraggableRightDirection == false) {
                 return 0;
             }
             return Width;
@@ -284,10 +279,10 @@ namespace AndroidSlideLayout {
         /// <param name="top">New y coordinate of the top edge of the view</param>
         /// <param name="dx">Change in x position from the last call</param>
         /// <param name="dy">Change in y position from the last call</param>
-        public virtual void OnViewPositionChanged(View changedView,int left,int top,int dx,int dy) {
+        public virtual void OnViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
             CurrentDragChildViewDraggedLeft = left;
             CurrentDragChildViewDraggedTop = top;
-            ViewPositionChanged?.Invoke(this,new ViewPositionChangedEventArgs(changedView,left,top,dx,dy));
+            ViewPositionChanged?.Invoke(this, new ViewPositionChangedEventArgs(changedView, left, top, dx, dy));
         }
 
         /// <summary>
@@ -297,13 +292,13 @@ namespace AndroidSlideLayout {
         /// <param name="releasedChild">The released view</param>
         /// <param name="xvel">X velocity of the pointer in pixels per second.</param>
         /// <param name="yvel">Y velocity of the pointer in pixels per second.</param>
-        public virtual void OnViewReleased(View releasedChild,float xvel,float yvel) {
-            var viewReleasedEventArgs = new ViewReleasedEventArgs(releasedChild,xvel,yvel);
-            ViewReleased?.Invoke(this,viewReleasedEventArgs);
-            if(viewReleasedEventArgs.Handled) {
+        public virtual void OnViewReleased(View releasedChild, float xvel, float yvel) {
+            var viewReleasedEventArgs = new ViewReleasedEventArgs(releasedChild, xvel, yvel);
+            ViewReleased?.Invoke(this, viewReleasedEventArgs);
+            if (viewReleasedEventArgs.Handled) {
                 return;
             }
-            SmoothSlideViewTo(releasedChild,CurrentDragChildViewLayoutedLeft,CurrentDragChildViewLayoutedTop);
+            SmoothSlideViewTo(releasedChild, CurrentDragChildViewLayoutedLeft, CurrentDragChildViewLayoutedTop);
         }
 
         /// <summary>
@@ -312,10 +307,10 @@ namespace AndroidSlideLayout {
         /// <param name="view">The slide view</param>
         /// <param name="finalLeft">The target view position left</param>
         /// <param name="finalTop">The target view position top</param>
-        public void SmoothSlideViewTo(View view,int finalLeft,int finalTop) {
-            viewDragHelper.SmoothSlideViewTo(view,finalLeft,finalTop);
+        public void SmoothSlideViewTo(View view, int finalLeft, int finalTop) {
+            viewDragHelper.SmoothSlideViewTo(view, finalLeft, finalTop);
             Invalidate();
-            childViewPosition[view] = new Point(finalLeft,finalTop);
+            childViewPosition[view] = new Point(finalLeft, finalTop);
         }
 
         /// <summary>
@@ -324,7 +319,7 @@ namespace AndroidSlideLayout {
         /// </summary>
         /// <param name="state">The new drag state</param>
         public virtual void OnViewDragStateChanged(int state) {
-            ViewDragStateChanged?.Invoke(this,new ViewDragStateChangedEventArgs(state));
+            ViewDragStateChanged?.Invoke(this, new ViewDragStateChangedEventArgs(state));
         }
 
         protected override bool CheckLayoutParams(ViewGroup.LayoutParams p) {
@@ -336,17 +331,17 @@ namespace AndroidSlideLayout {
         }
 
         public override ViewGroup.LayoutParams GenerateLayoutParams(IAttributeSet attrs) {
-            return new LayoutParams(Context,attrs);
+            return new LayoutParams(Context, attrs);
         }
 
         protected override ViewGroup.LayoutParams GenerateLayoutParams(ViewGroup.LayoutParams p) {
-            if(p is LayoutParams) {
+            if (p is LayoutParams) {
                 return new LayoutParams(p as LayoutParams);
             }
-            if(p is FrameLayout.LayoutParams) {
+            if (p is FrameLayout.LayoutParams) {
                 return new LayoutParams(p as FrameLayout.LayoutParams);
             }
-            if(p is MarginLayoutParams) {
+            if (p is MarginLayoutParams) {
                 return new LayoutParams(p as MarginLayoutParams);
             }
             return new LayoutParams(p);
@@ -377,10 +372,10 @@ namespace AndroidSlideLayout {
             /// </summary>
             public bool IsDraggableRightDirection { get; set; }
 
-            public LayoutParams() : base(MatchParent,MatchParent) { }
+            public LayoutParams() : base(MatchParent, MatchParent) { }
 
-            public LayoutParams(Context context,IAttributeSet attr) : base(context,attr) {
-                init(context,attr);
+            public LayoutParams(Context context, IAttributeSet attr) : base(context, attr) {
+                init(context, attr);
             }
 
             public LayoutParams(ViewGroup.LayoutParams source) : base(source) { }
@@ -396,19 +391,19 @@ namespace AndroidSlideLayout {
                 IsDraggableRightDirection = source.IsDraggableRightDirection;
             }
 
-            public LayoutParams(IntPtr javaReference,JniHandleOwnership transfer) : base(javaReference,transfer) { }
+            public LayoutParams(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) { }
 
-            private void init(Context context,IAttributeSet attr) {
-                var ar = context.ObtainStyledAttributes(attr,Resource.Styleable.SlideLayout);
+            private void init(Context context, IAttributeSet attr) {
+                var ar = context.ObtainStyledAttributes(attr, Resource.Styleable.SlideLayout);
                 try {
-                    IsDraggableTopDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_top_direction,false);
-                    IsDraggableBottomDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_bottom_direction,false);
-                    IsDraggableLeftDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_left_direction,false);
-                    IsDraggableRightDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_right_direction,false);
+                    IsDraggableTopDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_top_direction, false);
+                    IsDraggableBottomDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_bottom_direction, false);
+                    IsDraggableLeftDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_left_direction, false);
+                    IsDraggableRightDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_right_direction, false);
 
-                    bool isDraggableVerticalDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_vertical_direction,false);
-                    bool isDraggableHorizontalDirecion = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_horizontal_direction,false);
-                    bool isDraggableAllDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_all_direction,false);
+                    bool isDraggableVerticalDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_vertical_direction, false);
+                    bool isDraggableHorizontalDirecion = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_horizontal_direction, false);
+                    bool isDraggableAllDirection = ar.GetBoolean(Resource.Styleable.SlideLayout_draggable_all_direction, false);
 
                     IsDraggableTopDirection = IsDraggableTopDirection || isDraggableVerticalDirection || isDraggableAllDirection;
                     IsDraggableBottomDirection = IsDraggableBottomDirection || isDraggableVerticalDirection || isDraggableAllDirection;

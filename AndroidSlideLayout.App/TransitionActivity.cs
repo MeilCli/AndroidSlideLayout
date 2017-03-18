@@ -1,19 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
-using Android.Graphics;
-using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Support.V7.App;
-using Android.Transitions;
-using Android.Views;
 using Android.Widget;
 
 namespace AndroidSlideLayout.App {
@@ -26,18 +18,18 @@ namespace AndroidSlideLayout.App {
     // 5. when end activity, call ActivityCompat.FinishAfterTransition()
     // What's happen!!! Why cannot use ActivityOptionsCompat!!!!
 
-    [Activity(Label = "TransitionActivity",Theme = "@style/AppTheme")]
+    [Activity(Label = "TransitionActivity", Theme = "@style/AppTheme")]
     public class TransitionActivity : AppCompatActivity {
 
         private const string transitionName = "transitionactivity_transition";
 
         private SlideLayout slideLayout;
 
-        public static void Start(Activity activity,ImageView imageView) {
-            var intent = new Intent(activity,typeof(TransitionActivity));
-            if(Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop) {
-                var option = ActivityOptions.MakeSceneTransitionAnimation(activity,imageView,transitionName);
-                activity.StartActivity(intent,option.ToBundle());
+        public static void Start(Activity activity, ImageView imageView) {
+            var intent = new Intent(activity, typeof(TransitionActivity));
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop) {
+                var option = ActivityOptions.MakeSceneTransitionAnimation(activity, imageView, transitionName);
+                activity.StartActivity(intent, option.ToBundle());
             } else {
                 activity.StartActivity(intent);
             }
@@ -59,8 +51,8 @@ namespace AndroidSlideLayout.App {
 
             SetContentView(Resource.Layout.Transition);
 
-            using(var imageView = FindViewById<ImageView>(Resource.Id.ImageView)) {
-                ViewCompat.SetTransitionName(imageView,transitionName);
+            using (var imageView = FindViewById<ImageView>(Resource.Id.ImageView)) {
+                ViewCompat.SetTransitionName(imageView, transitionName);
             }
 
             // must not use `using pattern` and must not call Dispose until called OnDestroy
@@ -75,11 +67,11 @@ namespace AndroidSlideLayout.App {
             base.OnDestroy();
         }
 
-        private void viewReleased(object sender,ViewReleasedEventArgs args) {
+        private void viewReleased(object sender, ViewReleasedEventArgs args) {
             var slideLayout = sender as SlideLayout;
             int distance = Math.Abs(slideLayout.CurrentDragChildViewLayoutedTop - slideLayout.CurrentDragChildViewDraggedTop);
             int finishDistance = convertDensityIndependentPixelToPixel(150);
-            if(distance > finishDistance) {
+            if (distance > finishDistance) {
                 args.Handled = true;
                 ActivityCompat.FinishAfterTransition(this);
             }
