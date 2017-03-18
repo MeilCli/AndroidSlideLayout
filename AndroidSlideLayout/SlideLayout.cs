@@ -335,14 +335,14 @@ namespace AndroidSlideLayout {
         }
 
         protected override ViewGroup.LayoutParams GenerateLayoutParams(ViewGroup.LayoutParams p) {
-            if (p is LayoutParams) {
-                return new LayoutParams(p as LayoutParams);
+            if (p is LayoutParams layoutParams) {
+                return new LayoutParams(layoutParams);
             }
-            if (p is FrameLayout.LayoutParams) {
-                return new LayoutParams(p as FrameLayout.LayoutParams);
+            if (p is FrameLayout.LayoutParams frameLayoutParams) {
+                return new LayoutParams(frameLayoutParams);
             }
-            if (p is MarginLayoutParams) {
-                return new LayoutParams(p as MarginLayoutParams);
+            if (p is MarginLayoutParams marginLayoutParams) {
+                return new LayoutParams(marginLayoutParams);
             }
             return new LayoutParams(p);
         }

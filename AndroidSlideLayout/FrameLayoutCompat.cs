@@ -25,12 +25,8 @@ namespace AndroidSlideLayout {
         public bool MeasureAllChildren { get; set; } = false;
         private Drawable _foreground;
         public new Drawable Foreground {
-            get {
-                return _foreground;
-            }
-            set {
-                setForeground(value);
-            }
+            get => _foreground;
+            set => setForeground(value);
         }
 
         private int foregroundPaddingLeft = 0;
@@ -374,10 +370,10 @@ namespace AndroidSlideLayout {
         }
 
         protected override ViewGroup.LayoutParams GenerateLayoutParams(ViewGroup.LayoutParams p) {
-            if (p is LayoutParams) {
-                return new LayoutParams((LayoutParams)p);
-            } else if (p is MarginLayoutParams) {
-                return new LayoutParams((MarginLayoutParams)p);
+            if (p is LayoutParams layoutParams) {
+                return new LayoutParams(layoutParams);
+            } else if (p is MarginLayoutParams marginLayoutParams) {
+                return new LayoutParams(marginLayoutParams);
             }
             return new LayoutParams(p);
         }
