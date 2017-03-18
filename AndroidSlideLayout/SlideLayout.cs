@@ -6,7 +6,6 @@ using Android.Runtime;
 using Android.Support.V4.Widget;
 using Android.Util;
 using Android.Views;
-using Android.Widget;
 
 namespace AndroidSlideLayout {
 
@@ -338,7 +337,7 @@ namespace AndroidSlideLayout {
             if (p is LayoutParams layoutParams) {
                 return new LayoutParams(layoutParams);
             }
-            if (p is FrameLayout.LayoutParams frameLayoutParams) {
+            if (p is FrameLayoutCompat.LayoutParams frameLayoutParams) {
                 return new LayoutParams(frameLayoutParams);
             }
             if (p is MarginLayoutParams marginLayoutParams) {
@@ -350,7 +349,7 @@ namespace AndroidSlideLayout {
         /// <summary>
         /// Base of FrameLayout.LayoutParams, can set draggable direction parameter. 
         /// </summary>
-        public new class LayoutParams : FrameLayout.LayoutParams {
+        public new class LayoutParams : FrameLayoutCompat.LayoutParams {
 
             /// <summary>
             /// If set true, draggable top direction
@@ -382,7 +381,7 @@ namespace AndroidSlideLayout {
 
             public LayoutParams(MarginLayoutParams souce) : base(souce) { }
 
-            public LayoutParams(FrameLayout.LayoutParams source) : base(source) { }
+            public LayoutParams(FrameLayoutCompat.LayoutParams source) : base(source) { }
 
             public LayoutParams(LayoutParams source) : base(source) {
                 IsDraggableTopDirection = source.IsDraggableTopDirection;
